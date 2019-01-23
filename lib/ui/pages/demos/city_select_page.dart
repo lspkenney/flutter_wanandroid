@@ -1,7 +1,7 @@
 import 'dart:convert';
 
+import 'package:azlistview/azlistview.dart';
 import 'package:common_utils/common_utils.dart';
-import 'package:flukit/flukit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
@@ -86,8 +86,7 @@ class _CitySelectPageState extends State<CitySelectPage> {
   void _handleList(List<CityInfo> list) {
     if (list == null || list.isEmpty) return;
     for (int i = 0, length = list.length; i < length; i++) {
-      String pinyin =
-          PinyinHelper.convertToPinyinStringWithoutException(list[i].name);
+      String pinyin = PinyinHelper.getPinyinE(list[i].name);
       String tag = pinyin.substring(0, 1).toUpperCase();
       list[i].namePinyin = pinyin;
       if (RegExp("[A-Z]").hasMatch(tag)) {
@@ -96,6 +95,7 @@ class _CitySelectPageState extends State<CitySelectPage> {
         list[i].tagIndex = "#";
       }
     }
+    SuspensionUtil.sortListBySuspensionTag(list);
   }
 
   void _onSusTagChanged(String tag) {
@@ -161,7 +161,7 @@ class _CitySelectPageState extends State<CitySelectPage> {
             ),
             Expanded(
                 flex: 1,
-                child: QuickSelectListView(
+                child: AzListView(
                   data: _cityList,
                   topData: _hotCityList,
                   itemBuilder: (context, model) => _buildListItem(model),

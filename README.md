@@ -8,10 +8,26 @@
 
 [更新说明](./CHANGELOG.md)
 
-### APK:[点击下载 v0.1.3](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk)
+### 运行本项目注意！！！
+由于在国内访问Flutter有时可能会受到限制，clone项目后，请勿直接packages get，建议运行如下目录行：
+```
+export PUB_HOSTED_URL=https://pub.flutter-io.cn  
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn  
+flutter packages get
+```
+
+### v0.1.6
+1、主页新增Github Trending，新版本如未显示，请下拉刷新。  
+2、新增热门Tab，掘金热门文章！  
+3、重构HomePage。  
+<img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/github_trending.png" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/juejin_hot.png" width="240">
+
+### APK:[点击下载 v0.1.6](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk)
 
 ### APK QR:
   ![flutter_wanandroid](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/qrcode.png)
+
+### iOS：请自行clone项目代码运行。另外，iOS始终无法打开wanandroid相关url，有知道原因大佬的希望告知下～ 
 
 ## App目录结构
 >- |--lib
@@ -310,6 +326,7 @@ class SpHelper {
 ### Big Thanks
 ① 感谢鸿洋大佬提供的[开源api](http://www.wanandroid.com/blog/show/2)  
 ② 界面参考[gitme](https://flutterchina.club/app/gm.html)  
+③ [Github Trending Api](https://github.com/huchenme/github-trending-api)   
 
 ### 开源库
 1. Dart常用工具类库[common_utils][common_utils_github]  
@@ -332,10 +349,9 @@ class SpHelper {
 ## 关于作者，欢迎关注～
  [![jianshu][jianshuSvg]][jianshu]   [![juejin][juejinSvg]][juejin]  
 
-## Donations
- 如果您觉得该项目不错的话，并且希望您很有帮助的话，欢迎随意打赏，请作者喝杯咖啡～   
- <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/alipay.png" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/wechat.png" width="240">    
- <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/alipay_reward.png" width="240">
+### 项目问题汇总
+Q1：Flutter国际化系统切换iOS不生效问题？  
+A1：在Xcode项目Localizations下添加支持语言即可，[原文](https://stanzhai.site/blog/post/stanzhai/Flutter国际化设置在iOS设备上不生效的问题)。
 
 
 [flutter_wanandroid_github]: https://github.com/Sky24n/flutter_wanandroid
